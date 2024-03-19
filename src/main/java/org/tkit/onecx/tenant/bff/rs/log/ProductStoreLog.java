@@ -1,40 +1,59 @@
-// package org.tkit.onecx.product.store.bff.rs.log;
+package org.tkit.onecx.tenant.bff.rs.log;
 
-// import java.util.List;
+import java.util.List;
 
-// import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 
-// import org.tkit.quarkus.log.cdi.LogParam;
+import org.tkit.quarkus.log.cdi.LogParam;
 
-// import gen.org.tkit.onecx.product.store.bff.rs.internal.model.*;
+import gen.org.tkit.onecx.tenant.bff.rs.internal.model.*;
+import gen.org.tkit.onecx.tenant.bff.rs.internal.model.CreateTenantRequestDTO;
+import gen.org.tkit.onecx.tenant.bff.rs.internal.model.TenantPageResultDTO;
+import gen.org.tkit.onecx.tenant.bff.rs.internal.model.TenantSearchCriteriaDTO;
+import gen.org.tkit.onecx.tenant.bff.rs.internal.model.UpdateTenantRequestDTO;
+import gen.org.tkit.onecx.tenant.client.model.TenantSearchCriteria;
 
-// @ApplicationScoped
-// public class ProductStoreLog implements LogParam {
+@ApplicationScoped
+public class ProductStoreLog implements LogParam {
 
-//     @Override
-//     public List<LogParam.Item> getClasses() {
+    @Override
+    public List<LogParam.Item> getClasses() {
 
-//         return List.of(
-//                 this.item(10, CreateMicrofrontendRequestDTO.class,
-//                         x -> "CreateMicrofrontendRequestDTO[appId:" +
-//                                 ((CreateMicrofrontendRequestDTO) x).getAppId()
-//                                 + "]"),
-//                 this.item(10, UpdateMicrofrontendRequestDTO.class,
-//                         x -> "UpdateMicrofrontendRequestDTO[appId:" +
-//                                 ((UpdateMicrofrontendRequestDTO) x).getAppId()
-//                                 + "]"),
-//                 this.item(10, MfeAndMsSearchCriteriaDTO.class,
-//                         x -> "MicrofrontendSearchCriteriaDTO[appId:" +
-//                                 ((MfeAndMsSearchCriteriaDTO) x).getAppId()
-//                                 + "]"),
-//                 this.item(10, CreateProductRequestDTO.class,
-//                         x -> "CreateProductRequestDTO[name:" +
-//                                 ((CreateProductRequestDTO) x).getName() + "]"),
-//                 this.item(10, UpdateProductRequestDTO.class,
-//                         x -> "UpdateProductRequestDTO[name:" + ((UpdateProductRequestDTO) x).getName() + "]"),
-//                 this.item(10, ProductSearchCriteriaDTO.class,
-//                         x -> "ProductSearchCriteriaDTO[name:" + ((ProductSearchCriteriaDTO) x).getName()
-//                                 + "]"));
-//     }
+        return List.of(
+                this.item(10, CreateTenantRequestDTO.class,
+                        x -> "CreateTenantRequestDTO[tenantId:" +
+                                ((CreateTenantRequestDTO) x).getTenantId() +
+                                ", orgId:" +
+                                ((CreateTenantRequestDTO) x).getOrgId()
+                                + "]"),
+                this.item(10, TenantSearchCriteriaDTO.class,
+                        x -> "TenantSearchCriteriaDTO[orgId:" +
+                                ((TenantSearchCriteriaDTO) x).getOrgId() +
+                                ", pageNumber:" +
+                                ((TenantSearchCriteriaDTO) x).getPageNumber() +
+                                ", pageSize:" +
+                                ((TenantSearchCriteriaDTO) x).getPageSize()
+                                + "]"),
+                this.item(10, TenantSearchCriteria.class,
+                        x -> "TenantSearchCriteria[orgId:" +
+                                ((TenantSearchCriteria) x).getOrgId() +
+                                ", pageNumber:" +
+                                ((TenantSearchCriteria) x).getPageNumber() +
+                                ", pageSize:" +
+                                ((TenantSearchCriteria) x).getPageSize()
+                                + "]"),
+                this.item(10, TenantPageResultDTO.class,
+                        x -> "TenantPageResultDTO[pageNumber:" +
+                                ((TenantPageResultDTO) x).getTotalPages()
+                                + ", stream:" +
+                                ((TenantPageResultDTO) x).getStream().toString()
+                                + ", pageSize:" +
+                                ((TenantPageResultDTO) x).getSize()
+                                + "]"),
+                this.item(10, UpdateTenantRequestDTO.class,
+                        x -> "UpdateTenantRequestDTO[orgId:" +
+                                ((UpdateTenantRequestDTO) x).getOrgId()
+                                + "]"));
+    }
 
-// }
+}
