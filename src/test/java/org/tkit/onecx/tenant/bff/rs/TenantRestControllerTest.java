@@ -30,7 +30,7 @@ import io.quarkus.test.keycloak.client.KeycloakTestClient;
 @QuarkusTest
 @LogService
 @TestHTTPEndpoint(TenantRestController.class)
-public class TenantRestControllerTest extends AbstractTest {
+class TenantRestControllerTest extends AbstractTest {
 
     KeycloakTestClient keycloakClient = new KeycloakTestClient();
     @InjectMockServerClient

@@ -4,7 +4,7 @@ version: 0.0.0
 appVersion: 0.0.0
 description: Onecx Tenant BFF
 keywords:
-  - product store
+  - tenant
 sources:
   - https://github.com/onecx/onecx-tenant-bff
 maintainers:
