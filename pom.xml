@@ -137,7 +137,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <inputSpec>src/main/openapi/onecx-tenant-bff.yaml</inputSpec>
+                            <inputSpec>src/main/openapi/openapi-bff.yaml</inputSpec>
                             <apiPackage>gen.org.tkit.onecx.tenant.bff.rs.internal</apiPackage>
                             <modelPackage>gen.org.tkit.onecx.tenant.bff.rs.internal.model</modelPackage>
                         </configuration>

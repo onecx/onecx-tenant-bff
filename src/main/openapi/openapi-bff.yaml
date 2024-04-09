@@ -6,7 +6,7 @@ servers:
   - url: https://localhost:8080
 tags:
   - name: tenant
-    description: tenant bff
+    description: OneCX Tenant BFF
 paths:
   /tenants/search:
       post:
@@ -78,7 +78,7 @@ paths:
               - read
         tags:
           - tenant
-        summary: Get Tenant map by GUID
+        summary: Get Tenant by GUID
         operationId: getTenant
         parameters:
           - name: id
