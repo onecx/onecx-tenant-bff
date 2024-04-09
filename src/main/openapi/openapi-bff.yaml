@@ -78,7 +78,7 @@ paths:
               - read
         tags:
           - tenant
-        summary: Get Tenant by GUID
+        summary: Get Tenant by id
         operationId: getTenant
         parameters:
           - name: id
