@@ -1,2 +1,2 @@
 # onecx-tenant-bff
-OneCx Tenant Management BFF
+OneCX Tenant BFF
