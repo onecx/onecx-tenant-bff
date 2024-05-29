@@ -124,10 +124,11 @@ class TenantRestControllerTest extends AbstractTest {
 
         TenantPageResult tenantPageResult = new TenantPageResult();
         tenantPageResult.setNumber(0);
-        tenantPageResult.setSize(0);
+        tenantPageResult.setSize(100);
         tenantPageResult.setStream(tenantList);
 
         TenantSearchCriteria tenantSearchCriteria = new TenantSearchCriteria();
+        tenantSearchCriteria.setPageSize(100);
         // create mock rest endpoint
         mockServerClient.when(request().withPath("/internal/tenants/search").withMethod(HttpMethod.POST)
                 .withBody(JsonBody.json(tenantSearchCriteria)))
@@ -137,6 +138,7 @@ class TenantRestControllerTest extends AbstractTest {
                         .withBody(JsonBody.json(tenantPageResult)));
 
         TenantSearchCriteriaDTO tenantSearchCriteriaDTO = new TenantSearchCriteriaDTO();
+        tenantSearchCriteriaDTO.setPageSize(100);
 
         var output = given()
                 .when()
