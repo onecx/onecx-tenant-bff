@@ -21,7 +21,8 @@ quarkus.openapi-generator.codegen.spec.onecx_tenant_internal_yaml.base-package=g
 quarkus.openapi-generator.codegen.spec.onecx_tenant_internal_yaml.return-response=true
 quarkus.openapi-generator.codegen.spec.onecx_tenant_internal_yaml.additional-api-type-annotations=@org.eclipse.microprofile.rest.client.annotation.RegisterClientHeaders;
 quarkus.openapi-generator.codegen.spec.onecx_tenant_internal_yaml.additional-model-type-annotations=@io.quarkus.runtime.annotations.RegisterForReflection;
-%prod.quarkus.rest-client.onecx_tenant_internal_yaml.providers=io.quarkus.oidc.client.reactive.filter.OidcClientRequestReactiveFilter
+quarkus.openapi-generator.codegen.spec.onecx_tenant_internal_yaml.enable-security-generation=false
+%prod.quarkus.rest-client.onecx_tenant_internal.providers=io.quarkus.oidc.client.reactive.filter.OidcClientRequestReactiveFilter
 %prod.quarkus.oidc-client.client-id=${quarkus.application.name}
 quarkus.openapi-generator.codegen.input-base-dir=target/tmp/openapi
 ----
@@ -59,8 +60,11 @@ app:
             read: permission on all GET requests and POST search
             write: permission on PUT, POST, PATCH requests, where objects are saved or updated
             delete: permission on all DELETE requests
-        keycloak:
-          client:
-            enabled: true
+    keycloak:
+      client:
+        enabled: true
+        spec:
+          kcConfig:
+            defaultClientScopes: [ ocx-tn:all, ocx-pm:read  ]
 ----
 
