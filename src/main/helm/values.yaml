@@ -17,4 +17,8 @@ app:
         enabled: true
         spec:
           kcConfig:
-            defaultClientScopes: [ ocx-tn:all, ocx-pm:read  ]
+            defaultClientScopes: [ ocx-tn:all, ocx-pm:read ]
+    microservice:
+      spec:
+        description: OneCX Tenant Backend For Frontend
+        name: OneCX Tenant BFF
