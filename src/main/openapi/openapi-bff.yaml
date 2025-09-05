@@ -1,12 +1,13 @@
 openapi: '3.0.2'
 info:
   title: onecx-tenant-bff
+  description: Backend-For-Frontend (BFF) service for onecx-tenant. This API provides endpoints to manage Tenants
   version: '1.0'
 servers:
-  - url: https://localhost:8080
+  - url: https://onecx-tenant-bff:8080
 tags:
   - name: tenant
-    description: OneCX Tenant BFF
+    description: Managing Tenants
 paths:
   /tenants/search:
     post:
@@ -16,7 +17,7 @@ paths:
             - read
       tags:
         - tenant
-      summary: Search tenants by criteria
+      description: Search for tenants by criteria
       operationId: searchTenants
       requestBody:
         required: true
@@ -26,7 +27,7 @@ paths:
               $ref: '#/components/schemas/TenantSearchCriteria'
       responses:
         '200':
-          description: OK
+          description: Tenant search results retrieved successfully
           content:
             'application/json':
               schema:
@@ -45,7 +46,7 @@ paths:
             - write
       tags:
         - tenant
-      summary: Create new tenant
+      summary: Create a new tenant
       operationId: createTenant
       requestBody:
         required: true
@@ -55,7 +56,7 @@ paths:
               $ref: '#/components/schemas/CreateTenantRequest'
       responses:
         '201':
-          description: Created
+          description: Tenant created successfully
           headers:
             Location:
               required: true
@@ -68,8 +69,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProblemDetailResponse'
-        '404':
-          description: Not found
   /tenants/{id}:
     get:
       x-onecx:
@@ -78,7 +77,7 @@ paths:
             - read
       tags:
         - tenant
-      summary: Get Tenant by id
+      summary: Get a tenant by its id
       operationId: getTenant
       parameters:
         - name: id
@@ -88,13 +87,13 @@ paths:
             type: string
       responses:
         '200':
-          description: OK
+          description: Tenant retrieved successfully
           content:
             'application/json':
               schema:
                 $ref: '#/components/schemas/Tenant'
         '404':
-          description: Not found
+          description: Tenant not found
     put:
       x-onecx:
         permissions:
@@ -102,7 +101,7 @@ paths:
             - write
       tags:
         - tenant
-      summary: Update tenant
+      description: Update a tenant by its id
       operationId: updateTenant
       parameters:
         - name: id
@@ -117,7 +116,7 @@ paths:
               $ref: '#/components/schemas/UpdateTenantRequest'
       responses:
         '200':
-          description: OK
+          description: Tenant updated successfully
           content:
             'application/json':
               schema:
@@ -129,7 +128,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProblemDetailResponse'
         '404':
-          description: Not found
+          description: Tenant not found
 components:
   schemas:
     TenantSearchCriteria:
