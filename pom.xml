@@ -136,6 +136,7 @@
                             <inputSpec>src/main/openapi/openapi-bff.yaml</inputSpec>
                             <apiPackage>gen.org.tkit.onecx.tenant.bff.rs.internal</apiPackage>
                             <modelPackage>gen.org.tkit.onecx.tenant.bff.rs.internal.model</modelPackage>
+                            <typeMappings>File=byte[]</typeMappings>
                         </configuration>
                     </execution>
                 </executions>
@@ -183,6 +184,21 @@
                             </url>
                             <outputDirectory>target/tmp/openapi</outputDirectory>
                             <outputFileName>onecx-tenant-internal.yaml</outputFileName>
+                            <skipCache>true</skipCache>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>tenant-svc-internal-image</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>
+                                https://raw.githubusercontent.com/JordenReuter/onecx-tenant-svc/refs/heads/feature/tenant-images/src/main/openapi/onecx-tenant-image-internal.yaml
+                            </url>
+                            <outputDirectory>target/tmp/openapi</outputDirectory>
+                            <outputFileName>onecx-tenant-image-internal.yaml</outputFileName>
                             <skipCache>true</skipCache>
                         </configuration>
                     </execution>
