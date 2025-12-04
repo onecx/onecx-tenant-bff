@@ -195,7 +195,7 @@
                         </goals>
                         <configuration>
                             <url>
-                                https://raw.githubusercontent.com/JordenReuter/onecx-tenant-svc/refs/heads/feature/tenant-images/src/main/openapi/onecx-tenant-image-internal.yaml
+                                https://raw.githubusercontent.com/onecx/onecx-tenant-svc/main/src/main/openapi/onecx-tenant-image-internal.yaml
                             </url>
                             <outputDirectory>target/tmp/openapi</outputDirectory>
                             <outputFileName>onecx-tenant-image-internal.yaml</outputFileName>
