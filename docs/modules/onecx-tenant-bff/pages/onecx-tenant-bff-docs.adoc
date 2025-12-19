@@ -31,7 +31,7 @@ quarkus.openapi-generator.codegen.spec.onecx_tenant_image_internal_yaml.addition
 quarkus.openapi-generator.codegen.spec.onecx_tenant_image_internal_yaml.enable-security-generation=false
 %prod.quarkus.rest-client.onecx_image_internal.providers=io.quarkus.oidc.client.reactive.filter.OidcClientRequestReactiveFilter
 %prod.quarkus.rest-client.onecx_tenant_internal.providers=io.quarkus.oidc.client.reactive.filter.OidcClientRequestReactiveFilter
-%prod.quarkus.oidc-client.client-id=${ONECX_OIDC_CLIENT_CLIENT_ID:${quarkus.application.name}}
+%prod.quarkus.oidc-client.client-id=${quarkus.application.name}
 quarkus.openapi-generator.codegen.input-base-dir=target/tmp/openapi
 ----
 ====
@@ -56,8 +56,6 @@ Default values
 ----
 app:
   name: bff
-  template:
-    oidc_client_id: "ONECX_OIDC_CLIENT_CLIENT_ID"
   image:
     repository: "onecx/onecx-tenant-bff"
   operator:
@@ -78,6 +76,11 @@ app:
             defaultClientScopes: [ ocx-tn:all, ocx-pm:read ]
     microservice:
       spec:
+        description: OneCX Tenant Backend For Frontend
+        name: OneCX Tenant BFF
+----
+
+
         description: OneCX Tenant Backend For Frontend
         name: OneCX Tenant BFF
 ----
