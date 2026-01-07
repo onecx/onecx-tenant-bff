@@ -80,8 +80,3 @@ app:
         name: OneCX Tenant BFF
 ----
 
-
-        description: OneCX Tenant Backend For Frontend
-        name: OneCX Tenant BFF
-----
-
