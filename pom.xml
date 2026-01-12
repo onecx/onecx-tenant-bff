@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>onecx-tenant-bff</artifactId>
+    <name>OneCX Tenant Backend For Frontend</name>
     <version>999-SNAPSHOT</version>
 
     <dependencies>

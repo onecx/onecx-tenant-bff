@@ -1,8 +1,7 @@
 include::onecx-tenant-bff-attributes.adoc[opts=optional]
 
-== onecx-tenant-bff
+= OneCX Tenant Backend For Frontend
 
-include::docs.adoc[opts=optional]
 
 
 include::onecx-tenant-bff-docs.adoc[opts=optional]
