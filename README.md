@@ -1,2 +1,2 @@
 # onecx-tenant-bff
-OneCX Tenant Backend-For-Frontend (BFF)
+OneCX Tenant Backend-For-Frontend
