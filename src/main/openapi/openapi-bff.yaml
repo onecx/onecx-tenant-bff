@@ -135,7 +135,7 @@ paths:
     post:
       x-onecx:
         permissions:
-          tenant:
+          image:
             - write
       tags:
         - images
@@ -171,7 +171,7 @@ paths:
     get:
       x-onecx:
         permissions:
-          tenant:
+          image:
             - read
       tags:
         - images
@@ -205,7 +205,7 @@ paths:
     delete:
       x-onecx:
         permissions:
-          tenant:
+          image:
             - delete
       tags:
         - images
