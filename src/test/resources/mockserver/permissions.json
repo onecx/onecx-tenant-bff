@@ -13,7 +13,8 @@
         "json": {
           "appId": "onecx-tenant-bff",
           "permissions": {
-            "tenant": ["read", "write", "delete"],
+            "tenant": ["read", "write"],
+            "image": ["read", "write", "delete"],
             "permissions": ["admin-write","admin-read"]
           }
         },
@@ -36,6 +37,7 @@
           "appId": "onecx-tenant-bff",
           "permissions": {
             "tenant": ["read"],
+            "image": ["read"],
             "permissions": ["admin-write","admin-read"]
           }
         },
