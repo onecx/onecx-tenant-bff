@@ -141,6 +141,11 @@ paths:
         - images
       description: Upload an images by its reference id and type
       parameters:
+        - name: mimeType
+          in: header
+          required: true
+          schema:
+            $ref: "#/components/schemas/MimeType"
         - name: refId
           in: path
           required: true
@@ -320,6 +325,9 @@ components:
         description:
           type: string
           description: Description of the tenant
+    MimeType:
+      type: string
+      enum: [ "image/x-icon", "image/svg+xml", "image/png", "image/jpg", "image/jpeg" ]
     RefType:
       type: string
       enum: [ logo ]
