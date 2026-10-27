@@ -25,6 +25,7 @@ import org.tkit.onecx.tenant.bff.rs.controllers.ImagesRestController;
 import org.tkit.quarkus.log.cdi.LogService;
 
 import gen.org.tkit.onecx.tenant.bff.rs.internal.model.ImageInfoDTO;
+import gen.org.tkit.onecx.tenant.bff.rs.internal.model.MimeTypeDTO;
 import gen.org.tkit.onecx.tenant.bff.rs.internal.model.ProblemDetailResponseDTO;
 import gen.org.tkit.onecx.tenant.bff.rs.internal.model.RefTypeDTO;
 import gen.org.tkit.onecx.tenant.image.client.model.ProblemDetailResponse;
@@ -270,6 +271,7 @@ class ImagesRestControllerTest extends AbstractTest {
                 .header(HttpHeaders.CONTENT_TYPE, MEDIA_TYPE_IMAGE_PNG)
                 .pathParam("refId", refId)
                 .pathParam("refType", RefTypeDTO.LOGO)
+                .header("mimeType", MimeTypeDTO.IMAGE_PNG)
                 .when()
                 .body(FILE)
                 .contentType(MEDIA_TYPE_IMAGE_PNG)
@@ -301,6 +303,7 @@ class ImagesRestControllerTest extends AbstractTest {
                 .header(APM_HEADER_PARAM, ADMIN)
                 .pathParam("refId", refId)
                 .pathParam("refType", RefTypeDTO.LOGO)
+                .header("mimeType", MimeTypeDTO.IMAGE_PNG)
                 .when()
                 .body(FILE)
                 .contentType(MEDIA_TYPE_IMAGE_PNG)
@@ -333,6 +336,7 @@ class ImagesRestControllerTest extends AbstractTest {
                 .header(APM_HEADER_PARAM, ADMIN)
                 .pathParam("refId", refId)
                 .pathParam("refType", RefTypeDTO.LOGO)
+                .header("mimeType", MimeTypeDTO.IMAGE_PNG)
                 .when()
                 .body(FILE)
                 .contentType(MEDIA_TYPE_IMAGE_PNG)
@@ -392,6 +396,7 @@ class ImagesRestControllerTest extends AbstractTest {
                 .header(APM_HEADER_PARAM, ADMIN)
                 .pathParam("refId", refId)
                 .pathParam("refType", RefTypeDTO.LOGO)
+                .header("mimeType", MimeTypeDTO.IMAGE_PNG)
                 .when()
                 .body(body)
                 .contentType(MEDIA_TYPE_IMAGE_PNG)
